@@ -42,11 +42,11 @@ Ninja 仅支持 qinglong 2.8.2+
 
 ## 文档
 
-### 容器内
+### 容器内（推荐！！！）
 
 1. 容器映射 5701 端口，ninja 目录至宿主机
 
-   例（docker-compose）：
+   - 例（docker-compose）（推荐！！！）：
 
    ```diff
    version: "3"
@@ -73,7 +73,7 @@ Ninja 仅支持 qinglong 2.8.2+
    +      - ./ninja:/ql/ninja
    ```
 
-   例（docker-run）：
+   - 例（docker-run）：
 
    ```diff
    docker run -dit \
