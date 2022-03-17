@@ -13,7 +13,7 @@
         <el-button type="danger" size="small" auto @click="delAccount">删除CK</el-button>
       </div>
     </div>
-    
+
     <div class="card">
       <div class="card-header">
           <p class="card-title">WSCK 录入</p>
@@ -37,7 +37,7 @@
         <el-button type="danger" size="small" auto @click="delWSCKAccount">删除WSCK</el-button>
       </div>
     </div>
-    
+
     <div class="card">
       <div class="card-header">
         <p class="card-title">修改备注（CK和WSCK同步）</p>
@@ -49,7 +49,7 @@
         <el-button type="success" size="small" auto @click="changeremark">修改</el-button>
       </div>
     </div>
-    
+
     <div class="card">
       <div class="card-header">
         <p class="card-title">常见活动位置</p>
@@ -112,7 +112,7 @@ export default {
         data.nickName = userInfo.data.nickName
         data.timestamp = new Date(userInfo.data.timestamp).toLocaleString()
       }
-      
+
       if (wseid) {
         const userInfo = await getWSCKUserinfoAPI(wseid)
         if (!userInfo) {
@@ -145,7 +145,7 @@ export default {
         }, 1000)
       }
     }
-    
+
     const changeremark = async () => {
       const eid = localStorage.getItem('eid')
       const wseid = localStorage.getItem('wseid')
@@ -167,7 +167,7 @@ export default {
         }
       }
     }
-    
+
     const WSCKLogin = async () => {
       const wskey =
         data.jdwsck.match(/wskey=(.*?);/) &&
@@ -187,7 +187,7 @@ export default {
         ElMessage.error('wskey 解析失败，请检查后重试！')
       }
     }
-    
+
     const delWSCKAccount = async () => {
       const wseid = localStorage.getItem('wseid')
       const body = await WSCKDelaccountAPI({ wseid })
@@ -200,7 +200,7 @@ export default {
         }, 1000)
       }
     }
-    
+
     const openUrlWithJD = (url) => {
       const params = encodeURIComponent(
         `{"category":"jump","des":"m","action":"to","url":"${url}"}`
